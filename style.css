@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: "Inter";
+}
+
+.wrapper{
+    display: block;
+    margin: auto;
+    width: 270px;
+    height: 500px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    background-color: #F1EEDC;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: #BED7DC;
+    padding-left: 10px;
+    border-bottom-left-radius: 20px;
+    margin-bottom: 31px;
+}
+
+.header img{
+    border-radius: 100%;
+}
+
+.header #headinfo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+
+}
+
+.header #headinfo h1{
+    margin-bottom: 0px;
+    font-size: 26px;
+}
+
+.header #headinfo h3{
+    margin-top: 0px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 75px 120px 75px;
+    grid-template-rows: 60px 30px 60px 60px 60px 60px 60px;
+    grid-template-areas: ". botao ." 
+    ". . ."
+     "dashboard dashboard dashboard"
+     "post post post"
+     "live live live"
+     "message message message"
+     "library library library";
+}
+
+#butao{
+    grid-area: botao;
+    border-radius: 25px;
+    border: none;
+    background-color: #BED7DC;
+}
+
+#butao:hover{
+    background-color: #B3C8CF;
+    cursor: pointer;
+}
+
+#dashboard{
+    grid-area: dashboard
+}
+
+#PostSessions{
+    grid-area: post;
+}
+
+#LiveSessions{
+    grid-area: live;
+}
+
+#Messages{
+    grid-area: message;
+}
+
+#Library{
+    grid-area: library;
+}
+
+
+.menu > ul {
+    display: contents; /* Permite que os itens da lista sejam tratados como elementos diretos da grid */
+    /*A propriedade display: contents; faz com que os elementos filhos do <ul> sejam tratados como se fossem filhos diretos do contêiner .menu. Isso permite que os <li> sejam posicionados diretamente na grid, ignorando o <ul> como contêiner intermediário.*/
+}
+
+.menu li {
+    display: flex; /* Alinha o conteúdo dentro dos itens da lista */
+    padding-left: 18px;
+    font-size: 25px;
+    align-items: center;
+    color: black;
+    cursor: pointer
+}
+
+.menu li:hover{
+    border-left: 3px solid #B3C8CF;
+    color: #B3C8CF
+}
+
+svg{
+    padding-right: 15px;
+    padding-left: 0px;
+    opacity: 0.6;
+    color: white;
+}
+
+@media (max-width: 450px){
+    .wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    body{
+        margin: 0px;
+    }
+
+    .header{
+        width: 97%;
+        height: 25svh;
+        border-radius: 0px;
+    }
+
+    .header img{
+        transform: scale(1.7);
+        margin-left: 20px;
+    }
+
+    .header #headinfo{
+        margin-left: 25px;
+    }
+
+    .header #headinfo h1{
+        font-size: 2.5em;
+        text-wrap: nowrap;
+    }
+    .header #headinfo h3{
+        font-size: 1.4em;
+    }
+
+    #butao{
+        width: 270px;
+        grid-column: 2;
+        font-size: 2em;
+        width: 33vh
+    }
+    #butao svg{
+        transform: scale(5);
+        align-self: center;
+        padding-left: 9px;
+        padding-bottom: 2px;
+    }
+
+  
+
+    .menu{
+        display: grid;
+        grid-template-columns: 1px 1fr 1px;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        width: 100%;
+        gap: 50px;
+        justify-content: center;
+    }
+
+
+    .menu li{
+        font-size: 3em;
+    }
+}
